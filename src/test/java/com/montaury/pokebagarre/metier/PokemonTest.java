@@ -48,5 +48,45 @@ class PokemonTest {
         assertTrue(pokemon.estVainqueurContre(pokemon2));
     }
 
+    // Test de toutes les autres méthodes
+
+    @Test
+    void getNom() {
+        assertEquals("Pikachu", pokemon.getNom());
+    }
+
+    @Test
+    void getUrlImage() {
+        assertEquals("https://pokeapi.co/api/v2/pokemon/25/", pokemon.getUrlImage());
+    }
+
+    @Test
+    void getStats() {
+        assertEquals(new Stats(55, 40), pokemon.getStats());
+    }
+
+    @Test
+    void testToString() {
+        assertEquals("Pikachu", pokemon.toString());
+    }
+
+    @Test
+    void testEquals() {
+        assertEquals(pokemon, pokemon);
+        assertNotEquals(pokemon, null);
+        assertNotEquals(pokemon, new Object());
+        assertNotEquals(pokemon, pokemon2);
+        assertEquals(pokemon, new Pokemon("Pikachu", "https://pokeapi.co/api/v2/pokemon/25/", new Stats(55, 40)));
+    }
+
+    @Test
+    void testHashCode() {
+        assertEquals(pokemon.hashCode(), pokemon.hashCode());
+        assertNotEquals(pokemon.hashCode(), pokemon2.hashCode());
+        assertEquals(pokemon.hashCode(), new Pokemon("Pikachu", "https://pokeapi.co/api/v2/pokemon/25/", new Stats(55, 40)).hashCode());
+    }
+
+
+
 
 }
