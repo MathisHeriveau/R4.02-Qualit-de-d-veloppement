@@ -34,11 +34,11 @@ public class EcranSaisie {
     var root = new VBox();
     root.setAlignment(Pos.BASELINE_CENTER);
     root.setSpacing(5);
-    var inviteNomPokemon1 = new Label("Nom du premier Pokémon");
+    var inviteNomPokemon1 = new Label("Nom du premier Pokemon");
     nomPokemon1 = new TextField();
     nomPokemon1.setId("nomPokemon1");
     inviteNomPokemon1.setLabelFor(nomPokemon1);
-    var inviteNomPokemon2 = new Label("Nom du second Pokémon");
+    var inviteNomPokemon2 = new Label("Nom du second Pokemon");
     nomPokemon2 = new TextField();
     nomPokemon2.setId("nomPokemon2");
     inviteNomPokemon2.setLabelFor(nomPokemon2);
@@ -59,7 +59,7 @@ public class EcranSaisie {
     root.getChildren().add(labelErreur);
     root.getChildren().add(labelResultat);
     root.getChildren().add(imageVainqueur);
-    return new Scene(root, 450, 300);
+    return new Scene(root, 500, 200);
   }
 
   private void traiterClicBouton() {
@@ -91,7 +91,7 @@ public class EcranSaisie {
         labelErreur.setText("Erreur: " + erreur.getCause().getMessage());
         return;
       }
-      labelResultat.setText("Le vainqueur est: " + vainqueur.getNom());
+      labelResultat.setText("Le est: " + vainqueur.getNom());
       imageVainqueur.setImage(new Image(vainqueur.getUrlImage()));
     });
   }
